@@ -150,7 +150,7 @@ export default function AdminPanel() {
                 {designs.map(design => (
                     <Card key={design.id}>
                         <CardContent className="p-4">
-                            <img src={design.image_url} alt="Design" className="w-40 h-40 object-cover rounded" />
+                            <img src={`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`} alt="Design" className="w-40 h-40 object-cover rounded" />
                             <div className="mt-2">Category: {design.category}</div>
                             <div>Price: ₹{design.price}</div>
                             <div className="flex gap-2 mt-3">

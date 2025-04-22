@@ -50,7 +50,7 @@ export default function Home() {
                 className="w-full max-w-[240px] bg-white border border-gray-300 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl overflow-hidden"
               >
                 <img
-                  src={design.image_url}
+                  src={`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`}
                   alt={`Design ${design.id}`}
                   onClick={() => setSelectedImage(design.image_url)}
                   className="w-full h-48 object-center cursor-pointer rounded-t-md -mt-7"
