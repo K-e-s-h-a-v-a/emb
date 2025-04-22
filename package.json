@@ -15,6 +15,7 @@
     "@nhost/react": "^3.10.3",
     "@radix-ui/react-label": "^2.1.4",
     "@radix-ui/react-slot": "^1.2.0",
+    "@vercel/analytics": "^1.5.0",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
