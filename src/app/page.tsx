@@ -34,8 +34,8 @@ export default function Home() {
   };
 
   return (
-    <section className="px-4 py-10 md:px-10 relative">
-      <h2 className="text-center font-bold text-3xl md:text-4xl mb-10 font-sans text-gray-800">
+    <section className="px-4 py-10 sm:px-6 md:px-10 relative">
+      <h2 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl mb-8 font-sans text-gray-800">
         Embroidery Catalogue
       </h2>
 
@@ -43,20 +43,20 @@ export default function Home() {
         <p className="text-center text-gray-500 text-lg">Loading designs...</p>
       ) : designs.length > 0 ? (
         <>
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
             {designs.map((design) => (
               <Card
                 key={design.id}
-                className="w-full max-w-[240px] bg-white border border-gray-300 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl overflow-hidden"
+                className="w-full max-w-xs mx-auto bg-white border border-gray-300 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl overflow-hidden"
               >
                 <img
                   src={`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`}
                   alt={`Design ${design.id}`}
                   onClick={() => setSelectedImage(design.image_url)}
-                  className="w-full h-48 object-center cursor-pointer rounded-t-md -mt-7"
+                  className="w-full h-48 sm:h-56 object-cover cursor-pointer"
                 />
                 <CardContent className="p-4">
-                  <p className="text-lg font-medium text-gray-800">₹{design.price}</p>
+                  <p className="text-lg font-semibold text-gray-800">₹{design.price}</p>
                   <p className="text-sm text-gray-500 mt-1">Category: {design.category}</p>
                 </CardContent>
               </Card>
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
           {/* Pagination Controls */}
-          <div className="flex justify-center gap-4 mt-8 items-center">
+          <div className="flex flex-wrap justify-center gap-4 mt-8 items-center text-sm sm:text-base">
             <Button
               variant="outline"
               onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
@@ -72,7 +72,9 @@ export default function Home() {
             >
               Previous
             </Button>
-            <span className="text-gray-700 font-medium">Page {page} of {totalPages || 1}</span>
+            <span className="text-gray-700 font-medium">
+              Page {page} of {totalPages || 1}
+            </span>
             <Button
               variant="outline"
               onClick={() => setPage((prev) => prev + 1)}
@@ -95,7 +97,7 @@ export default function Home() {
           <img
             src={selectedImage}
             alt="Large design preview"
-            className="max-w-[90%] max-h-[90%] rounded-xl border-4 border-white shadow-lg"
+            className="max-w-[90vw] max-h-[90vh] rounded-xl border-4 border-white shadow-lg"
           />
         </div>
       )}
