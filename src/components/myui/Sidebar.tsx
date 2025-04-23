@@ -95,6 +95,7 @@ const Sidebar = () => {
                                 <Button
                                     className="w-full justify-start font-medium px-4 py-2 text-gray-700 cursor-pointer hover:bg-gray-200 transition"
                                     variant="ghost"
+                                    onClick={() => setIsOpen(false)}
                                 >
                                     {cat.name}
                                 </Button>
