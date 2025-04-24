@@ -52,7 +52,7 @@ export default function Home() {
                 <img
                   src={`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`}
                   alt={`Design ${design.id}`}
-                  onClick={() => setSelectedImage(design.image_url)}
+                  onClick={() => setSelectedImage(`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`)}
                   className="w-full h-48 sm:h-56 object-cover cursor-pointer"
                 />
                 <CardContent className="p-4">

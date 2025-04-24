@@ -56,7 +56,7 @@ export default function CategoryPage() {
                 <img
                   src={`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`}
                   alt={`Design`}
-                  onClick={() => setSelectedImage(design.image_url)}
+                  onClick={() => setSelectedImage(`/api/image-proxy?url=${encodeURIComponent(design.image_url)}`)}
                   className="w-full h-48 object-center cursor-pointer rounded-t-md -mt-7"
                 />
                 <CardContent className="p-4">
